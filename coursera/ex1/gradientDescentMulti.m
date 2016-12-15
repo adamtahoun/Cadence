@@ -18,6 +18,14 @@ for iter = 1:num_iters
     %
 
 
+p = X * theta;
+p = p - y;
+t = p .* X;
+s = sum(t);
+
+step = s .* (alpha / m);
+theta = theta - step';
+
 
 
 
