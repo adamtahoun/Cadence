@@ -36,14 +36,16 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+siggy = sigmoid(X * theta);
+yy = log(siggy);
+ny = log(1 - siggy);
 
+norm = (lambda / (2 * m)) * sum(theta(2:length(theta),:) .^ 2);
+reg_sum = (lambda / m) .* theta;
+reg_sum(1) = 0;
 
-
-
-
-
-
-
+J = (1 / m) * sum((-y .* yy) - ((1 - y) .* ny)) + norm;
+grad = sum(((siggy - y) .* X) ./ m) + reg_sum';
 
 % =============================================================
 
