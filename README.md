@@ -1,5 +1,2 @@
 # Cadence
-A machine learning library for fun the functional F# language.
-
-
-
+A machine learning library for the fun functional F# language.
